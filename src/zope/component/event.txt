@@ -70,10 +70,10 @@ First create an object class:
 
 Then create an event class:
 
-  >>> class IObjectThrownEvent(zope.component.interfaces.IObjectEvent):
+  >>> class IObjectThrownEvent(zope.registry.interfaces.IObjectEvent):
   ...     """An object has been thrown away"""
 
-  >>> class ObjectThrownEvent(zope.component.interfaces.ObjectEvent):
+  >>> class ObjectThrownEvent(zope.registry.interfaces.ObjectEvent):
   ...     """An object has been thrown away"""
   ...     zope.interface.implements(IObjectThrownEvent)
 

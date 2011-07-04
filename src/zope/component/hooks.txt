@@ -24,7 +24,7 @@ historically); it will return the global one if no current site is set:
 
 Let's set a site now. A site has to be an object that provides the
 ``getSiteManager`` method, which is specified by
-``zope.component.interfaces.IPossibleSite``:
+``zope.registry.interfaces.IPossibleSite``:
 
 >>> from zope.registry import Components
 >>> class Site(object):

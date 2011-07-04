@@ -20,11 +20,11 @@ from zope.interface import Interface
 from zope.interface import implementedBy
 from zope.interface import providedBy
 
-from zope.component.interfaces import IComponentArchitecture
-from zope.component.interfaces import IComponentRegistrationConvenience
-from zope.component.interfaces import IFactory
+from zope.registry.interfaces import IComponentArchitecture
+from zope.registry.interfaces import IComponentRegistrationConvenience
+from zope.registry.interfaces import IFactory
 from zope.registry.interfaces import ComponentLookupError
-from zope.component.interfaces import IComponentLookup
+from zope.registry.interfaces import IComponentLookup
 from zope.component._declaration import adaptedBy
 from zope.component._declaration import adapter
 from zope.component._declaration import adapts
@@ -234,3 +234,25 @@ def getFactoriesFor(interface, context=None):
                 if iface.isOrExtends(interface):
                     yield name, factory
                     break
+
+from zope.registry.interfaces import IAdapterRegistration
+from zope.registry.interfaces import IHandlerRegistration
+from zope.registry.interfaces import IRegistrationEvent
+from zope.registry.interfaces import ISubscriptionAdapterRegistration
+from zope.registry.interfaces import IUtilityRegistration
+
+@adapter(IUtilityRegistration, IRegistrationEvent)
+def dispatchUtilityRegistrationEvent(registration, event):
+    handle(registration.component, event)
+
+@adapter(IAdapterRegistration, IRegistrationEvent)
+def dispatchAdapterRegistrationEvent(registration, event):
+    handle(registration.factory, event)
+
+@adapter(ISubscriptionAdapterRegistration, IRegistrationEvent)
+def dispatchSubscriptionAdapterRegistrationEvent(registration, event):
+    handle(registration.factory, event)
+
+@adapter(IHandlerRegistration, IRegistrationEvent)
+def dispatchHandlerRegistrationEvent(registration, event):
+    handle(registration.handler, event)

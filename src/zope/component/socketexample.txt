@@ -499,7 +499,7 @@ Optionally, I could have also specified the interfaces that the created object
 will provide, but the factory class is smart enough to determine the
 implemented interface from the class. We now register the factory:
 
-  >>> from zope.component.interfaces import IFactory
+  >>> from zope.registry.interfaces import IFactory
   >>> gsm.registerUtility(factory, IFactory, 'SolarPanel')
 
 We can now get a list of interfaces the produced object will provide:
@@ -557,7 +557,7 @@ always get the global site manager using the API:
   >>> from zope.component import globalSiteManager
   >>> gsm is globalSiteManager
   True
-  >>> from zope.component.interfaces import IComponentLookup
+  >>> from zope.registry.interfaces import IComponentLookup
   >>> IComponentLookup.providedBy(gsm)
   True
   >>> from zope.registry.interfaces import IComponents

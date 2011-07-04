@@ -99,7 +99,7 @@ The Component Architecture Factory API
   >>> factory = Factory(Klass, 'Klass', 'Klassier')
   >>> gsm = zope.component.getGlobalSiteManager() 
 
-  >>> from zope.component.interfaces import IFactory
+  >>> from zope.registry.interfaces import IFactory
   >>> gsm.registerUtility(factory, IFactory, 'klass')
 
 Creating an Object

@@ -4,9 +4,9 @@
 
   <subscriber handler=".event.objectEventNotify" />
 
-  <subscriber handler="zope.registry.dispatchUtilityRegistrationEvent" />
-  <subscriber handler="zope.registry.dispatchAdapterRegistrationEvent" />
-  <subscriber handler="zope.registry.dispatchSubscriptionAdapterRegistrationEvent" />
-  <subscriber handler="zope.registry.dispatchHandlerRegistrationEvent" />
+  <subscriber handler="zope.component._api.dispatchUtilityRegistrationEvent" />
+  <subscriber handler="zope.component._api.dispatchAdapterRegistrationEvent" />
+  <subscriber handler="zope.component._api.dispatchSubscriptionAdapterRegistrationEvent" />
+  <subscriber handler="zope.component._api.dispatchHandlerRegistrationEvent" />
 
 </configure>

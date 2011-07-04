@@ -29,8 +29,8 @@ from zope.testing import renormalizing
 from zope.testrunner.layer import UnitTests
 
 from zope.registry.interfaces import ComponentLookupError
-from zope.component.interfaces import IComponentArchitecture
-from zope.component.interfaces import IComponentLookup
+from zope.registry.interfaces import IComponentArchitecture
+from zope.registry.interfaces import IComponentLookup
 from zope.component.testing import setUp, tearDown, PlacelessSetup
 import zope.component.persistentregistry
 import zope.component.globalregistry
@@ -184,7 +184,7 @@ def testInterfaces():
 def test_getGlobalSiteManager():
     """One of the most important functions is to get the global site manager.
 
-      >>> from zope.component.interfaces import IComponentLookup
+      >>> from zope.registry.interfaces import IComponentLookup
       >>> from zope.component.globalregistry import base
 
     Get the global site manager via the CA API function:
@@ -249,7 +249,7 @@ def test_getSiteManager():
       Traceback (most recent call last):
       ...
       ComponentLookupError: ('Could not adapt', <instance Ob>,
-      <InterfaceClass zope.component.interfaces.IComponentLookup>)
+      <InterfaceClass zope.registry.interfaces.IComponentLookup>)
     """
 
 def testAdapterInContext(self):
