@@ -102,7 +102,7 @@ def getSiteManager(context=None):
 def adapter_hook(interface, object, name='', default=None):
     try:
         return siteinfo.adapter_hook(interface, object, name, default)
-    except zope.component.interfaces.ComponentLookupError:
+    except zope.registry.interfaces.ComponentLookupError:
         return default
 
 

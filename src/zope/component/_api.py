@@ -23,7 +23,7 @@ from zope.interface import providedBy
 from zope.component.interfaces import IComponentArchitecture
 from zope.component.interfaces import IComponentRegistrationConvenience
 from zope.component.interfaces import IFactory
-from zope.component.interfaces import ComponentLookupError
+from zope.registry.interfaces import ComponentLookupError
 from zope.component.interfaces import IComponentLookup
 from zope.component._declaration import adaptedBy
 from zope.component._declaration import adapter
@@ -207,7 +207,7 @@ def getNextUtility(context, interface, name=''):
     """
     util = queryNextUtility(context, interface, name, _marker)
     if util is _marker:
-        raise zope.component.interfaces.ComponentLookupError(
+        raise ComponentLookupError(
               "No more utilities for %s, '%s' have been found." % (
                   interface, name))
     return util

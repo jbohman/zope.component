@@ -54,8 +54,6 @@ setup(
         + '\n' +
         read('src', 'zope', 'component', 'factory.txt')
         + '\n' +
-        read('src', 'zope', 'component', 'registry.txt')
-        + '\n' +
         read('src', 'zope', 'component', 'persistentregistry.txt')
         + '\n' +
         read('src', 'zope', 'component', 'socketexample.txt')

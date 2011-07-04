@@ -18,7 +18,7 @@ __docformat__ = 'restructuredtext'
 from types import ClassType
 
 import zope.component
-from zope.component.interfaces import ComponentLookupError
+from zope.registry.interfaces import ComponentLookupError
 from zope.interface import alsoProvides
 from zope.interface.interfaces import IInterface
 

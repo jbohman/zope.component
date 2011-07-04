@@ -14,7 +14,8 @@
 """Helper functions for testing utilities that use get/queryNextUtility.
 """
 import zope.interface
-from zope.component.interfaces import IComponentLookup, IComponents
+from zope.registry.interfaces import IComponents
+from zope.component.interfaces import IComponentLookup
 
 
 class SiteManagerStub(object):
