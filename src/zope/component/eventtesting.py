@@ -15,11 +15,11 @@
 """
 from zope.component import provideHandler
 from zope.component.event import objectEventNotify
-from zope.component._api import dispatchUtilityRegistrationEvent
-from zope.component._api import dispatchAdapterRegistrationEvent
-from zope.component._api import (
+from zope.component.registry import dispatchUtilityRegistrationEvent
+from zope.component.registry import dispatchAdapterRegistrationEvent
+from zope.component.registry import (
     dispatchSubscriptionAdapterRegistrationEvent)
-from zope.component._api import dispatchHandlerRegistrationEvent
+from zope.component.registry import dispatchHandlerRegistrationEvent
 from zope.testing import cleanup
 
 events = []
