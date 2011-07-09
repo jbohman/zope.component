@@ -16,7 +16,7 @@ on subscription adapters / handlers.
 """
 __docformat__ = 'restructuredtext'
 
-import zope.registry.interfaces
+import zope.component.interfaces
 import zope.event
 
 
@@ -26,7 +26,7 @@ def dispatch(*event):
 zope.event.subscribers.append(dispatch)
 
 
-@zope.component.adapter(zope.registry.interfaces.IObjectEvent)
+@zope.component.adapter(zope.component.interfaces.IObjectEvent)
 def objectEventNotify(event):
     """Event subscriber to dispatch ObjectEvents to interested adapters."""
     zope.component.subscribers((event.object, event), None)

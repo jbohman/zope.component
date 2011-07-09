@@ -28,9 +28,9 @@ from zope.interface.interfaces import IInterface
 from zope.testing import renormalizing
 from zope.testrunner.layer import UnitTests
 
-from zope.registry.interfaces import ComponentLookupError
-from zope.registry.interfaces import IComponentArchitecture
-from zope.registry.interfaces import IComponentLookup
+from zope.component.interfaces import ComponentLookupError
+from zope.component.interfaces import IComponentArchitecture
+from zope.component.interfaces import IComponentLookup
 from zope.component.testing import setUp, tearDown, PlacelessSetup
 import zope.component.persistentregistry
 import zope.component.globalregistry
@@ -184,7 +184,7 @@ def testInterfaces():
 def test_getGlobalSiteManager():
     """One of the most important functions is to get the global site manager.
 
-      >>> from zope.registry.interfaces import IComponentLookup
+      >>> from zope.component.interfaces import IComponentLookup
       >>> from zope.component.globalregistry import base
 
     Get the global site manager via the CA API function:
@@ -213,7 +213,7 @@ def test_getSiteManager():
     We don't know anything about the default service manager, except that it
     is an `IComponentLookup`.
 
-      >>> from zope.registry.interfaces import IComponentLookup
+      >>> from zope.component.interfaces import IComponentLookup
       >>> IComponentLookup.providedBy(component.getSiteManager())
       True
 
@@ -245,11 +245,11 @@ def test_getSiteManager():
 
     Using a context that is not adaptable to `IComponentLookup` should fail.
 
-      >>> component.getSiteManager(ob) #doctest: +NORMALIZE_WHITESPACE
+      >>> component.getSiteManager(ob) #doctest: +NORMALIZE_WHITESPACE, +ELLIPSIS
       Traceback (most recent call last):
       ...
       ComponentLookupError: ('Could not adapt', <instance Ob>,
-      <InterfaceClass zope.registry.interfaces.IComponentLookup>)
+      <InterfaceClass zope...interfaces.IComponentLookup>)
     """
 
 def testAdapterInContext(self):

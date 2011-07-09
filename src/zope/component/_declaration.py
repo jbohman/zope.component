@@ -13,6 +13,7 @@
 ##############################################################################
 """Adapter declarations
 """
+# BBB 2011-07-09, import _declaration from zope.registry
 from zope.registry._declaration import adapter
 from zope.registry._declaration import adapts
 from zope.registry._declaration import adaptedBy

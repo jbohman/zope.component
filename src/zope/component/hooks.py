@@ -92,7 +92,7 @@ def getSiteManager(context=None):
     # We should really look look at this again though, especially
     # once site managers do less.  There's probably no good reason why
     # they can't be proxied.  Well, except maybe for performance.
-    sm = zope.registry.interfaces.IComponentLookup(
+    sm = zope.component.interfaces.IComponentLookup(
         context, zope.component.getGlobalSiteManager())
     if SECURITY_SUPPORT:
         sm = zope.security.proxy.removeSecurityProxy(sm)
@@ -102,7 +102,7 @@ def getSiteManager(context=None):
 def adapter_hook(interface, object, name='', default=None):
     try:
         return siteinfo.adapter_hook(interface, object, name, default)
-    except zope.registry.interfaces.ComponentLookupError:
+    except zope.component.interfaces.ComponentLookupError:
         return default
 
 

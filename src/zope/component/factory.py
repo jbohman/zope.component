@@ -15,7 +15,7 @@
 """
 from zope.interface import implements, implementedBy
 from zope.interface.declarations import Implements
-from zope.registry.interfaces import IFactory
+from zope.component.interfaces import IFactory
 
 class Factory(object):
     """Generic factory implementation.

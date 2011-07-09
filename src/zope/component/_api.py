@@ -20,11 +20,11 @@ from zope.interface import Interface
 from zope.interface import implementedBy
 from zope.interface import providedBy
 
-from zope.registry.interfaces import IComponentArchitecture
-from zope.registry.interfaces import IComponentRegistrationConvenience
-from zope.registry.interfaces import IFactory
-from zope.registry.interfaces import ComponentLookupError
-from zope.registry.interfaces import IComponentLookup
+from zope.component.interfaces import IComponentArchitecture
+from zope.component.interfaces import IComponentRegistrationConvenience
+from zope.component.interfaces import IFactory
+from zope.component.interfaces import ComponentLookupError
+from zope.component.interfaces import IComponentLookup
 from zope.component._declaration import adaptedBy
 from zope.component._declaration import adapter
 from zope.component._declaration import adapts
